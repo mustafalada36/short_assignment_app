@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/models.dart';
+import 'comments.dart';
 
 class DetailPage extends StatelessWidget {
   final Post post;
@@ -8,6 +9,29 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final comments = [
+      Comment(
+        name: 'Sophia Clark',
+        date: 'Nov 12',
+        comment: 'Sounds amazing! Where exactly did you go?',
+        likes: 25,
+        dislikes: 2,
+      ),
+      Comment(
+        name: 'Ethan Carter',
+        date: 'Nov 12',
+        comment: 'I\'m so jealous! I need a break too.',
+        likes: 18,
+        dislikes: 1,
+      ),
+      Comment(
+        name: 'Olivia Bennett',
+        date: 'Nov 12',
+        comment: 'The mountains are calling, and I must go!',
+        likes: 30,
+        dislikes: 3,
+      ),
+    ];
     const iconColor = Color.fromARGB(255, 74, 115, 156);
 
     return Scaffold(
@@ -68,6 +92,12 @@ class DetailPage extends StatelessWidget {
               ],
             ),
         ),
+
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: CommentList(comments: comments),
+            ),
+
           ],
         ),
       ),
