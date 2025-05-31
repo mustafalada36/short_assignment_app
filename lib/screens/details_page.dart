@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/models.dart';
-import 'comments.dart';
+import '../widgets/comments.dart';
 
 class DetailPage extends StatelessWidget {
   final Post post;
