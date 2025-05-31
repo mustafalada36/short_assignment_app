@@ -64,7 +64,7 @@ class _ListingPageState extends State<ListingPage> {
             child: IconButton(
               icon: const Icon(
                 Icons.add,
-                size: 30, // Make the icon bigger
+                size: 30,
               ),
               onPressed: () {
                 // Dummy action
@@ -79,8 +79,7 @@ class _ListingPageState extends State<ListingPage> {
         future: posts,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return ListView.separated(
-
+            return ListView.builder(
               padding: const EdgeInsets.all(16),
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
@@ -111,7 +110,7 @@ class _ListingPageState extends State<ListingPage> {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 16,
-                                  color: Color.fromARGB(255, 32, 38, 46), // title color
+                                  color: Color.fromARGB(255, 32, 38, 46),
                                 ),
                               ),
                               const SizedBox(height: 4),
@@ -121,7 +120,7 @@ class _ListingPageState extends State<ListingPage> {
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
                                   fontSize: 14,
-                                  color: Color.fromARGB(255, 76, 116, 157), // subtitle color
+                                  color: Color.fromARGB(255, 76, 116, 157),
                                 ),
                               ),
                             ],
@@ -130,11 +129,10 @@ class _ListingPageState extends State<ListingPage> {
                       ],
                     ),
                   ),
-                )
-                ;
+                );
               },
-              separatorBuilder: (_, __) => const Divider(),
             );
+
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           }
