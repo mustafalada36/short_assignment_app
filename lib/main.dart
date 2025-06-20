@@ -7,7 +7,8 @@ import 'models/models.dart';
 
 
 void main() {
-  runApp(MaterialApp(
+  runApp(
+    MaterialApp(
     title: 'Threads App',
     theme: ThemeData(
       primarySwatch: Colors.blue,
